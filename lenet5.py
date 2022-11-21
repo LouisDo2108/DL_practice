@@ -4,10 +4,10 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 
-class Net(nn.Module):
+class LeNet5(nn.Module):
 
     def __init__(self):
-        super(Net, self).__init__()
+        super(LeNet5, self).__init__()
         self.C1 = nn.Conv2d(1, 6, 5, stride=1)
         self.S2 = nn.MaxPool2d(2)
         self.C3 = nn.Conv2d(6, 16, 5, stride=1)
@@ -36,7 +36,7 @@ class Net(nn.Module):
 
 if __name__ == "__main__":
 
-    model = Net()
+    model = LeNet5()
     print(model)
 
     x = torch.randn(1, 1, 32, 32)
